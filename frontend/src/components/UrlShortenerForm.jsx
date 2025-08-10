@@ -28,7 +28,7 @@ function UrlShortenerForm() {
 
         setIsLoading(true);
         try {
-            const response = await axios.post('http://localhost:5000/api/shorten', {
+            const response = await axios.post(`${API_URL}/api/shorten`, {
                 originalUrl,
             });
             setShortUrl(response.data.shortUrl);

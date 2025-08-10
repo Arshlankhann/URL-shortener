@@ -8,7 +8,25 @@ const Url = require('./models/url');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// server.js
+const allowedOrigins = [
+    'http://localhost:5173', // Your local dev URL (check your Vite terminal)
+    'https://url-shortener-psi-plum.vercel.app' // Your frontend production URL
+];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        // allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    }
+}));
+
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -74,7 +92,7 @@ app.get('/:shortCode', async (req, res) => {
 
 app.get('/api/urls', async (req, res) => {
     try {
-        const urls = await Url.find().sort({ date: -1 }); 
+        const urls = await Url.find().sort({ date: -1 });
         res.json(urls);
     } catch (err) {
         console.error(err);

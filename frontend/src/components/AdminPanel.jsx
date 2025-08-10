@@ -9,7 +9,7 @@ function AdminPanel() {
     useEffect(() => {
         const fetchUrls = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/urls');
+                const response = await axios.get(`${API_URL}/api/urls`);
                 setUrls(response.data);
             } catch (err) {
                 setError('Failed to fetch URL data.');
