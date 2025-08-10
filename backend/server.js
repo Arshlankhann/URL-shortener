@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 // server.js
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://url-shortener-psi-plum.vercel.app'
+    'https://url-shortener-delta-weld.vercel.app/'
 ];
 
 app.use(cors({
