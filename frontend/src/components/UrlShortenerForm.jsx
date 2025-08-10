@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FiLink, FiArrowRight, FiCopy, FiCheck } from 'react-icons/fi';
 
 function UrlShortenerForm() {
+    const API_URL = import.meta.env.VITE_API_BASE_URL;
     const [originalUrl, setOriginalUrl] = useState('');
     const [shortUrl, setShortUrl] = useState('');
     const [error, setError] = useState('');
@@ -32,7 +33,7 @@ function UrlShortenerForm() {
                 originalUrl,
             });
             setShortUrl(response.data.shortUrl);
-            setOriginalUrl(''); 
+            setOriginalUrl('');
         } catch (err) {
             setError('Failed to shorten URL. The server may be down or the URL is invalid.');
             console.error(err);
