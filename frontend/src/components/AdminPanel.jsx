@@ -43,7 +43,7 @@ function AdminPanel() {
                     </tr>
                 </thead>
                 <tbody>
-                    {urls.map((url) => (
+                    {Array.isArray(urls) && urls.map((url) => (
                         <tr key={url._id}>
                             <td>
                                 <a href={url.originalUrl} target="_blank" rel="noopener noreferrer">
