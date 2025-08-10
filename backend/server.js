@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 // server.js
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://url-shortener-delta-weld.vercel.app/'
+    'https://url-shortener-delta-weld.vercel.app'
 ];
 
 app.use(cors({
@@ -40,7 +40,7 @@ db.once('open', () => {
 
 app.post('/api/shorten', async (req, res) => {
     const { originalUrl } = req.body;
-    const baseUrl = `http://localhost:${PORT}`;
+    const baseUrl = process.env.BASE_URL;
 
     if (!originalUrl) {
         return res.status(400).json({ error: 'Original URL is required' });
