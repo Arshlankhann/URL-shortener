@@ -85,7 +85,7 @@ To run this project on your local machine, follow these steps.
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/your-username/mern-url-shortener.git
+git clone https://github.com/Arshlankhann/URL-shortener
 cd mern-url-shortener
 ```
 
@@ -242,7 +242,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Arshlan Khan**  - arshlank894@gmail.com
 
-**Project Link:** [https://github.com/your-username/mern-url-shortener](https://github.com/your-username/mern-url-shortener)
+**Project Link:** https://github.com/Arshlankhann/URL-shortener
 
 ---
 
