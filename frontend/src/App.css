@@ -529,6 +529,9 @@
  }
 
  @media (max-width: 768px) {
+     body {
+         padding: 0;
+     }
      .App {
          padding: 40px 25px;
          border-radius: 20px;
