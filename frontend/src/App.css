@@ -169,6 +169,19 @@
      position: relative;
  }
 
+ .result a {
+     word-break: break-word;
+     overflow-wrap: anywhere;
+     max-width: 100%;
+ }
+
+ .url-table td a {
+     word-break: break-word;
+     overflow-wrap: anywhere;
+     max-width: 100%;
+     display: inline-block;
+ }
+
  .App-header h1 {
      font-size: 3.5rem;
      font-weight: 800;
